@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Annoucements</title>
+        <link href="/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/css/uikit.css" rel="stylesheet">
+        <link href="/css/main.css" rel="stylesheet">
+    </head>
+    <body>
+
+<nav class="uk-navbar-container uk-navbar-light uk-box-shadow-medium"  uk-sticky="" uk-navbar >  
+   
+<div class="uk-navbar-left">
+    <a href="/" class="uk-navbar-item uk-logo   "  >Church</a>
+  <ul class="uk-navbar-nav">
+
+    <li class="uk-parent  uk-hidden@lg uk-active"><a class="navund " href="/announcement">Annoucements</a></li>
+    <li class="uk-parent  uk-hidden@lg "><a class="navund " href="/sermon">Sermon</a></li>
+    </ul>
+</div>
+</nav>
+
+<%# ---------main annoucemnet %>
+<section class="mt-4">
+    <div class="container">
+    <div class="row" uk-scrollspy=" target: > div; cls:uk-animation-fade; delay:700; repeat:true">
+    <%found.forEach(function(found){%>
+    <div class="col-lg-4 ">
+    <div class="uk-card uk-card-defualt my-white mb-3 uk-box-shadow-small" >
+    <div class="uk-card-body " >
+    <h3><%-found.name %></h3>
+        <p class="uk-text-meta"><span uk-icon="icon: calendar;"></span> <%=found.created.toDateString()%> </p>
+    
+    <div class="uk-text-right">
+            <a  class="btn btn-outline-secondary btn-sm ann-btn " href="/announcement/<%=found._id%>" >Read more</a>
+            </div>
+            </div>
+</div>
+    </div>
+    <%})%>
+    </div>
+        
+    </div>
+</section>
+
+
+
+<form method="post" enctype="multipart/form-data" action="/upload">
+<input type="file" name="filename" value="">
+<input type="submit" name="" value="upload">
+    
+</form>
+
+
+  
+<%  include ./partials/footer %>

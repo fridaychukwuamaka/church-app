@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>New</title>
+        <link href="/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/css/uikit.css" rel="stylesheet">
+        <link href="/css/main.css" rel="stylesheet">
+    </head>
+    <body>
+
+<nav class="uk-navbar-container uk-navbar-light uk-box-shadow-medium"  uk-sticky="" uk-navbar >  
+   
+<div class="uk-navbar-left">
+    <a href="/" class="uk-navbar-item uk-logo   "  >Church</a>
+  <ul class="uk-navbar-nav">
+
+    <li class="uk-parent  uk-hidden@lg uk-active"><a class="navund " href="/announcement">Annoucements</a></li>
+    </ul>
+</div>
+</nav>
+
+<div class="container" >
+<ul  class="mt-4 uk-subnav uk-subnav-pill "  uk-switcher="animation: uk-animation-fade; duration:0500;" >
+    <li class=""><a href="#">New Annoucement</a></li>
+    <li><a href="#">New Sermon</a></li>
+</ul>
+
+<!-- This is the container of the content items -->
+<ul class="uk-switcher uk-margin">
+    <li>
+
+<div class="form-range mt-2 p-4 uk-box-shadow-small">
+<div class="">
+<form action="/announcement" method="POST">
+<div class="uk-margin">
+<h3  class="uk-text-center">Create a new Announcement</h3>
+<label for="" class="uk-form-label">Name</label>
+<input type="text" class="uk-input" name="name" >
+</div>
+  
+<div class="uk-margin">
+<label for="" class="uk-form-label">Annoucements</label>
+<textarea rows="6" cols="" class="uk-textarea" name="description" ></textarea>
+</div>
+
+
+<div class="uk-margin">
+<label for="" class="uk-form-label">Image</label>
+<input type="text" class="uk-input" name="image" >
+</div>
+
+<div class="uk-margin">
+<label for="" class="uk-form-label">Event:</label>
+<br>
+<label for="">True <input class="uk-radio" type="radio" name="optradio" value="1"></label>
+<label for="">False <input class="uk-radio" type="radio" name="optradio" value="0"></label>
+
+</div>
+<div class="uk-text-right">
+    <button class="uk-button">Create</button>
+</div>
+
+</form>
+    
+
+    
+</div>
+</div>
+<%# ---------main annoucemnet %>
+ 
+      
+
+    </li>
+<li><div class="form-range mt-2 p-4 uk-box-shadow-small">
+<div class="">
+<form action="/sermon"  enctype="multipart/form-data" method="POST">
+<div class="uk-margin">
+<h3  class="uk-text-center">Create a new Sermon</h3>
+<label for="" class="uk-form-label">Title</label>
+<input type="text" class="uk-input" name="name" >
+</div>
+
+<div class="uk-margin">
+<label for="" class="uk-form-label">Sermon</label>
+<textarea rows="6" cols="" class="uk-textarea" name="body" ></textarea>
+</div>
+
+
+<div class="uk-margin">
+<label for="" class="uk-form-label">Audio</label>
+
+<input type="text" class="uk-input" name="audio" value="">
+</div>
+
+
+
+
+
+<div class="uk-text-right">
+    <button class="uk-button">Create</button>
+</div>
+
+
+    
+</form>
+    
+</div>
+</div></li>
+
+</ul>
+</div> 
+
+    
+
+<%  include ./partials/footer %>
